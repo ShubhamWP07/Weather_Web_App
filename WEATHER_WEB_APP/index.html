@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/cloudy.png" type="image/x-icon">
+  <!-- Title -->
+  <title>WEATHER-WEB-APP</title>
+  <!-- script_link -->
+  <script src="/script.js" defer></script>
+  <!-- CSS_File_link -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="main">
+    <!-- section for searching the weather of a city -->
+    <form onsubmit="getData(event)" class="searchData">
+      <input type="text" name="text" id="input" placeholder="Enter City name here">
+      <button>Search</button>
+    </form>
+    <!-- Menu area section -->
+    <div class="menu_weather_detials_div">
+      <div class="menu_area">
+        <img src="/cloudy.png" alt="Logo" class="Logo">
+      </div>
+      
+      <!-- section for displaying the city weather data -->
+      <section class="cityWeatherData">
+        <!-- displaying the country details -->
+        <div class="countryDetails details">
+
+           <!-- displaying the city name -->
+          <div class="card">
+            <p id="cityName">City</p>
+            
+          </div>
+          <span id="comma_country">,</span>
+          <!-- displaying the country name -->
+          <div class="card">
+            <p id="countryName">Country</p>
+            
+          </div>
+          <br>
+          
+        </div>
+        <!-- displaying the current date -->
+        <div class="current_date_section">
+          <p id="current_date">Monday 13 Feb</p>
+        </div>
+
+        <!-- displaying the current temprature in celcius -->
+        <div class="Temp_section">
+          <!-- unicode for degree celcius symbol -->
+          <p class="Temp_p"><span id="temprature">22</span><sup>o</sup><span class="celcious">c</span></p>
+          <p id="weather_condition">Condition</p>
+        </div>
+
+       <!-- displaying the weather condition -->
+        <div class="W_icon_sec">
+          <img width="20px" id="weather_icon" src="/sun.png" alt="icon" />
+          
+        </div>
+
+        <section class="todays_condition_section">
+          <h3 class="todays_condition_heading">TODAY'S CONDITION</h3>
+          <div class="left_con_section">
+            <div class="t-condition">
+              <h3 id="current_high_sec">
+                <span id="current_high">0</span><sup>o</sup>
+              </h3>
+              <p class="high">High</p>
+            </div>
+            <div class="t-condition">
+              <h3 id="current_Wind_sec">
+                <span id="current_Wind">0</span><span>mph</span>
+              </h3>
+              <p class="Wind">Wind</p>
+            </div>
+            <div class="t-condition">
+              <h3 id="current_Sunrise_sec">
+                <span id="current_Sunrise">00:00</span>
+              </h3>
+              <p class="Sunrise">Sunrise</p>
+            </div>
+          </div>
+
+          <div class="right_con_section">
+            <div class="t-condition">
+              <h3 id="current_Low_sec">
+                <span id="current_Low">0</span><sup>o</sup>
+              </h3>
+              <p class="Low">Low</p>
+            </div>
+            <div class="t-condition">
+              <h3 id="current_Rain_sec">
+                <span id="current_Rain">0</span><span>%</span>
+              </h3>
+              <p class="Rain">Rain</p>
+            </div>
+            <div class="t-condition">
+              <h3 id="current_Sunset_sec">
+                <span id="current_Sunset">00:00</span>
+              </h3>
+              <p class="Sunset">Sunset</p>
+            </div>
+          </div>
+          
+          <div class="seven-days-forecast">
+            <h3 class="seven-days-forecast_heading">7-DAY FORECAST</h3>
+            <!-- monday -->
+            <div class="seven_days_section">
+              <div class="left_7days_sec"><h3 id="week_days_monday">DAY_01</h3></div>
+              <div class="center_7days_sec">
+                <img width="30px" id="weather_icon_7days_monday" src="/sun.png" alt="icon" />
+                <p id="weather_condition_7days_monday">Condition</p>
+              </div>
+              <div class="right_7days_sec">
+                <span id="current_high_7days_monday">0</span><span>/</span><span id="current_low_7days_monday">0</span>
+              </div>
+            </div>
+            <!-- tuesday -->
+            <div class="seven_days_section">
+              <div class="left_7days_sec"><h3 id="week_days_tuesday">DAY_02</h3></div>
+              <div class="center_7days_sec">
+                <img width="30px" id="weather_icon_7days_tuesday" src="/sun.png" alt="icon" />
+                <p id="weather_condition_7days_tuesday">Condition</p>
+              </div>
+              <div class="right_7days_sec">
+                <span id="current_high_7days_tuesday">0</span><span>/</span><span id="current_low_7days_tuesday">0</span>
+              </div>
+            </div>
+            <!-- wednesday -->
+            <div class="seven_days_section">
+              <div class="left_7days_sec"><h3 id="week_days_wednesday">DAY_03</h3></div>
+              <div class="center_7days_sec">
+                <img width="30px" id="weather_icon_7days_wednesday" src="/sun.png" alt="icon" />
+                <p id="weather_condition_7days_wednesday">Condition</p>
+              </div>
+              <div class="right_7days_sec">
+                <span id="current_high_7days_wednesday">0</span><span>/</span><span id="current_low_7days_wednesday">0</span>
+              </div>
+            </div>
+            <!-- thursday -->
+            <div class="seven_days_section">
+              <div class="left_7days_sec"><h3 id="week_days_thursday">DAY_04</h3></div>
+              <div class="center_7days_sec">
+                <img width="30px" id="weather_icon_7days_thursday" src="/sun.png" alt="icon" />
+                <p id="weather_condition_7days_thursday">Condition</p>
+              </div>
+              <div class="right_7days_sec">
+                <span id="current_high_7days_thursday">0</span><span>/</span><span id="current_low_7days_thursday">0</span>
+              </div>
+            </div>
+            <!-- friday -->
+            <div class="seven_days_section">
+              <div class="left_7days_sec"><h3 id="week_days_friday">DAY_05</h3></div>
+              <div class="center_7days_sec">
+                <img width="30px" id="weather_icon_7days_friday" src="/sun.png" alt="icon" />
+                <p id="weather_condition_7days_friday">Condition</p>
+              </div>
+              <div class="right_7days_sec">
+                <span id="current_high_7days_friday">0</span><span>/</span><span id="current_low_7days_friday">0</span>
+              </div>
+            </div>
+            <!-- saturday -->
+            <div class="seven_days_section">
+              <div class="left_7days_sec"><h3 id="week_days_saturday">DAY_06</h3></div>
+              <div class="center_7days_sec">
+                <img width="30px" id="weather_icon_7days_saturday" src="/sun.png" alt="icon" />
+                <p id="weather_condition_7days_saturday">Condition</p>
+              </div>
+              <div class="right_7days_sec">
+                <span id="current_high_7days_saturday">0</span><span>/</span><span id="current_low_7days_saturday">0</span>
+              </div>
+            </div>
+            <!-- sunday -->
+            <div class="seven_days_section">
+              <div class="left_7days_sec"><h3 id="week_days_sunday">DAY_07</h3></div>
+              <div class="center_7days_sec">
+                <img width="30px" id="weather_icon_7days_sunday" src="/sun.png" alt="icon" />
+                <p id="weather_condition_7days_sunday">Condition</p>
+              </div>
+              <div class="right_7days_sec">
+                <span id="current_high_7days_sunday">0</span><span>/</span><span id="current_low_7days_sunday">0</span>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+      </section>
+
+      
+
+    </div>
+
+  </div>
+</body>
+</html>
